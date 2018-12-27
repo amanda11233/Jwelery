@@ -40,8 +40,8 @@ class CartController extends Controller
         $oldcart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldcart);
         $offer = Offer::where('category_id', $product->category_id)->first();
-        
-        $cart->add($product, $product->id, $offer);
+        $qty = $request->qty;
+        $cart->add($product, $product->id, $offer, $qty);
 
         $request->session()->put('cart', $cart);
         

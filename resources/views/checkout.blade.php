@@ -54,7 +54,7 @@
                                             Credit Card Number
                                         </label>
                                         <div class = "col-sm-6 col-md-6">
-                                            <input type = "text" id = "card" class = "custom-form-control" placeholder = "xxxx-xxxx-xxxx-xxxx" required>
+                                            <input type = "text" id = "card" class = "custom-form-control" placeholder = "4242 4242 4242 4242" required>
                                         </div>
                                     </div>
                             </div>

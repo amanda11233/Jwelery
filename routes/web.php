@@ -28,6 +28,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/products','Admin\AdminController@products')->name('admin.products');
     Route::get('/categories','Admin\AdminController@categories')->name('admin.categories');
     Route::get('/offers','Admin\AdminController@offers')->name('admin.offers');
+    Route::get('/orders','Admin\AdminController@orders')->name('admin.orders');
+    Route::post('/orders/{id}','Admin\AdminController@delete_orders')->name('admin.orders-delete');
     Route::resource('/careers','careers\careersController');
     
     Route::post('/editProduct', 'Products\ProductsController@editProduct')->name('product.editProduct');
@@ -44,7 +46,7 @@ Route::prefix('admin')->group(function(){
 
 Route::resource('/cart','CartController');
 Route::get('/cartDelete/{id}' ,'CartController@deleteItem')->name('cart.delete');
-Route::get('/addToCart/{id}', 'CartController@addToCart')->name('cart.addToCart');
+Route::post('/addToCart/{id}', 'CartController@addToCart')->name('cart.addToCart');
 
 Route::get('/checkout','Payment\PaymentController@showCheckoutForm')->name('checkout');
 Route::get('/payment','Payment\PaymentController@postCheckout')->name('checkout.submit');

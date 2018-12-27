@@ -43,6 +43,13 @@
                                         Careers</h1>
                             </div></a>
                     </div> 
+                    <div class = "col-sm-4">
+                                <a href = "{{route('admin.orders')}}">  <div class = "dashboard-order">
+                                        <h1 class = "text-center">
+                                                <span class = "fa fa-dollar"></span> &nbsp;
+                                                Order</h1>
+                                    </div></a>
+                            </div> 
     </div>
    
     

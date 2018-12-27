@@ -88,6 +88,9 @@ requestAnimationFrame(function animate(time){
                        <a href = "{{route('careers.index')}}">   <li>
                         Careers
                        </li></a>
+                       <a href = "{{route('admin.orders')}}">   <li>
+                        Orders
+                       </li></a>
             </ul>
         
     </div>

@@ -651,3 +651,21 @@ padding: 10px;
         .about-img{
             width: 100%;
         }
+        .custom-btn{
+            padding: 10px;
+            border: none;
+
+        }
+        .plus-btn{
+            background-color: #395996;
+            color: white;
+            width: 100%;
+        }
+        .min-btn{
+            background-color: tomato;
+            color: white;
+            width: 100%;
+        }
+        .qty-input {
+            text-align: center;
+        }

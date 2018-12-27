@@ -22,8 +22,8 @@
                     <th>Applicant's Name</th>
                     <th>Applicant's Email</th>
                     <th> CV</th>
-                <th></th>
-                
+                <th>Download</th>
+                <th>Delete</th>
                 </tr>
                 @foreach($careers as $key => $value)
                 <tr>
@@ -32,8 +32,8 @@
                 <td>{{$key + 1}}</td>
                 <td>{{$value->name}}</td>
                 <td>{{$value->email}}</td>
-                <td><a href = "{{public_path('/documents/CVs/' . $value->email . '/' . $value->cv)}}" download>{{$value->cv}}</a></td>
-                <td></td>
+                <td><a href = "{{'/documents/CVs/' . $value->email . '/' . $value->cv}}">{{$value->cv}}</a></td>
+                <td><a href = "{{'/documents/CVs/' . $value->email . '/' . $value->cv}}" download><button class = "btn btn-primary"><span class = "fa fa-download"></span></button></a></td>
                 <td>
                 <form method = 'post' action = '{{route('careers.destroy', $value->id)}}'>
                     @csrf

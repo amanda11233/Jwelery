@@ -47,7 +47,7 @@
                 <a href = "{{route('cart.index')}}" class = "nav-link">
                         <span class = "fa fa-shopping-cart fa-2x"></span>
                         @if(Session::has('cart'))
-                <span class = "cart-indicator">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                <span class = "cart-indicator">{{Session::has('cart') ? Session::get('cart')->cartindex : ''}}</span>
                     @endif</a>
                 </li> 
                     <li class="nav-item dropdown border-left">

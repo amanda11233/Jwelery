@@ -28,11 +28,7 @@
                 <td>{{$value->phone}}</td>
                 <td>{{$value->gender}}</td>
                 <td>{{$value->address}}</td>
-                <td>
-                    <a href = "">
-                        <button id = "editAuthors" class = "btn btn-secondary" >Edit</button></a>
-                
-                </td>
+             
                 
                 </tr>
                 @endforeach

@@ -63,11 +63,20 @@
                                 <div class = "col-sm-8"><p class = "text-justify"> {{$product->desc}}</p></div>
                         </div><hr>
                             @if(Auth::guard('web')->user())
-                    <a href = "{{route('cart.addToCart', $product->id)}}">
+                    <form action = "{{route('cart.addToCart', $product->id)}}" method = "post">
+                        @csrf
+                        <div class = "form-group row">
+                                <div class = "col-sm-3"><button id = "min-btn" type = "button" class = "custom-btn min-btn" onclick = "minus()">-</button></div>
                            
-                            <button class = "btn btn-primary" style = "width: 100%;">
-                                    <span class = "fa fa-plus"></span>&nbsp;
-                                    Add To Cart </button></a>
+                            <div class = "col-sm-6"> <input id = "qty-input" class = "qty-input custom-form-control" type = "number" value = "1" name = "qty" readonly></div>
+                            <div class = "col-sm-3"><button type = "button" class = "custom-btn plus-btn" onclick = "plus()">+</button></div>
+                            
+                        </div>
+                        <button class = "btn btn-primary" style = "width: 100%;" type = "submit">
+                            <span class = "fa fa-plus"></span>&nbsp;
+                            Add To Cart </button>
+                    </form>
+                           
                         @else
                         <div class = "alert alert-warning">
                             <strong><span class = "fa fa-bell"></span>&nbsp;Notice</strong><hr>
@@ -102,3 +111,32 @@
 
 
 @endsection
+
+<script>
+    var num = 1;
+    function plus(){
+        num++;
+         document.getElementById("qty-input").value = num;
+         document.getElementById('qty-input').innerHTML = num;
+
+         if(num >= 10){
+            num=0;
+         }
+         if(num>0){
+document.getElementById('min-btn').disabled = false;
+     }
+    }
+
+          function minus(){
+       
+
+         if(num == 1){
+            document.getElementById('min-btn').disabled = true;
+         }else{
+            num--;
+         document.getElementById("qty-input").value = num;
+         document.getElementById('qty-input').innerHTML = num;
+         }
+
+    }
+</script>
